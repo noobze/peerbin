@@ -35,6 +35,9 @@ const parseIfJson = (data) => {
 
 const isJson = (data) => {
     try{
+        if(typeof(data) === 'string'){
+            return false;
+        }
         let _ = JSON.parse(`"${data}"`);
         return true;
     }catch(e){
